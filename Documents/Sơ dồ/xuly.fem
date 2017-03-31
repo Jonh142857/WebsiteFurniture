@@ -419,7 +419,7 @@ Shadow=0</a:DisplayPreferences>
 <a:CenterText>Đ
 </a:CenterText>
 <a:Rect>((-1491,3527), (-236,9427))</a:Rect>
-<a:ListOfPoints>((-877,9027),(-851,3927))</a:ListOfPoints>
+<a:ListOfPoints>((-876,9027),(-851,3927))</a:ListOfPoints>
 <a:TextStyle>0</a:TextStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>16711680</a:LineColor>
@@ -454,8 +454,8 @@ Shadow=0</a:DisplayPreferences>
 <a:CreationDate>1488162975</a:CreationDate>
 <a:ModificationDate>1488163092</a:ModificationDate>
 <a:CenterText>S</a:CenterText>
-<a:Rect>((1512,10681), (9658,12576))</a:Rect>
-<a:ListOfPoints>((1912,11383),(9258,11247))</a:ListOfPoints>
+<a:Rect>((1513,10681), (9658,12576))</a:Rect>
+<a:ListOfPoints>((1913,11383),(9258,11247))</a:ListOfPoints>
 <a:TextStyle>0</a:TextStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>16711680</a:LineColor>
