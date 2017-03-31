@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     3/31/2017 3:43:39 PM                         */
+/* Created on:     3/31/2017 5:23:36 PM                         */
 /*==============================================================*/
 
 
@@ -161,7 +161,7 @@ alter table CTHD add constraint FK_CTHD foreign key (SP_ID)
 alter table CTHD add constraint FK_CTHD2 foreign key (DH_ID)
       references DONHANG (DH_ID) on delete restrict on update restrict;
 
-alter table DONHANG add constraint FK_RELATIONSHIP_6 foreign key (HTTT_ID)
+alter table DONHANG add constraint FK_DH_KM foreign key (HTTT_ID)
       references HTTHANHTOAN (HTTT_ID) on delete restrict on update restrict;
 
 alter table DONHANG add constraint FK_USER_DH foreign key (U_ID)
@@ -184,3 +184,4 @@ alter table SP_KM add constraint FK_SP_KM foreign key (SP_ID)
 
 alter table SP_KM add constraint FK_SP_KM2 foreign key (KM_ID)
       references KHUYENMAI (KM_ID) on delete restrict on update restrict;
+
