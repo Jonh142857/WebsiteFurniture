@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+    <nav th:replace="layout :: header"></nav>
+
+    <div class="container main-content form">
+        <div class="row">
+          <form action="#" th:action="@{/sanpham/save}" th:object="${sanpham}"
+		    method="POST" novalidate="novalidate">
+		    <input type="hidden" th:field="*{id}" />
+		    <div class="form-group">
+		        <label>Name</label> 
+		        <input type="text" class="form-control"
+		            th:field="*{name}" th:errorclass="field-error" /> 
+		        <em th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></em>
+		    </div>
+		    <div class="form-group">
+		        <label>Giá</label> 
+		        <input type="text" class="form-control" th:field="*{gia}" />
+		    </div>
+		     <div class="form-group">
+		        <label>Hình</label> 
+		        <input type="text" class="form-control" th:field="*{hinh}" />
+		    </div>
+		    <div class="form-group">
+		        <label>QRCode</label> 
+		        <input type="text" class="form-control" th:field="*{qrcode}" />
+		    </div>
+		     <div class="form-group">
+		        <label>Mô tả</label> 
+		        <input type="text" class="form-control" th:field="*{mota}" />
+		    </div>
+		     <div class="form-group">
+		        <label>Loại sản phẩm</label> 
+		        <input type="text" class="form-control" th:field="*{lsp_id}" />
+		    </div>
+		     <div class="form-group">
+		        <label>Nhà sản xuất</label> 
+		        <input type="text" class="form-control" th:field="*{nsx_id}" />
+		    </div>
+		    <button type="submit" class="btn btn-primary">Save</button>
+		</form>
+        </div>
+    </div><!-- /.container -->
+
+    <footer th:replace="layout :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+	<nav th:replace="layout :: header"></nav>
+
+	<div class="container main-content list">
+		<div th:if="${success}"
+			class="row alert alert-success alert-dismissible">
+			<button type="button" class="close" data-dismiss="alert"
+				aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<span th:text="${success}"></span>
+		</div>
+
+		<th:block th:if="${#lists.isEmpty(sanphams)}">
+			<h3>No sanphams</h3>
+		</th:block>
+
+		<th:block th:unless="${#lists.isEmpty(sanphams)}">
+			<div class="row">
+				<a th:href="@{/sanpham/create}" class="btn btn-success pull-left">
+					<span class="glyphicon glyphicon-plus"></span> Add new sanpham
+				</a>
+				<form class="form-inline pull-right" action="#"
+					th:action="@{/sanpham/search}" method="GET">
+					<div class="form-group">
+						<input type="text" class="form-control" name="q"
+							placeholder="Type sanpham name..." />
+					</div>
+					<button type="submit" class="btn btn-primary">Search</button>
+				</form>
+			</div>
+			<div class="row">
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th>No</th>
+							<th>Name</th>
+							<th>Giá</th>
+							<th>Hình</th>
+							<th>QRCode</th>
+							<th>Mô tả</th>
+							<th>Loại sản phẩm</th>
+							<th>Nhà sản xuất</th>
+
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="sanpham,iterStat : ${sanphams}">
+							<td th:text="${iterStat.count}"></td>
+							<td th:text="${sanpham.name}"></td>
+							<td th:text="${sanpham.gia}"></td>
+							<td th:text="${sanpham.hinh}"></td>
+							<td th:text="${sanpham.qrcode}"></td>
+							<td th:text="${sanpham.mota}"></td>
+							<td th:text="${sanpham.lsp_id}"></td>
+							<td th:text="${sanpham.nsx_id}"></td>
+							<td><a th:href="@{/sanpham/{id}/edit(id=${sanpham.id})}"><span
+									class="glyphicon glyphicon-pencil"></span></a></td>
+							<td><a th:href="@{/sanpham/{id}/delete(id=${sanpham.id})}"><span
+									class="glyphicon glyphicon-trash"></span></a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</th:block>
+	</div>
+	<!-- /.container -->
+
+	<footer th:replace="layout :: footer"></footer>
+</body>
+</html>
