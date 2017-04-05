@@ -20,8 +20,12 @@ public class MainController {
 	
 
     @GetMapping("/")
-    public String index() {
-        return "index";
+    public String master() {
+        return "master";
+    }
+    @GetMapping("/test")
+    public String test() {
+        return "test";
     }
     
 }

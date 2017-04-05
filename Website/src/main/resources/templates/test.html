@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head">
+
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Xem Trang web</a>
+        </div>
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="http://localhost:8080/loaisanpham">Loại Sản Phẩm</a>
+                </li>
+                <li>
+                    <a href="http://localhost:8080/nhasanxuat">Nhà Sản Xuất</a>
+                </li>
+                <li>
+                    <a href="http://localhost:8080/khuyenmai">Khuyến Mãi</a>
+                </li>
+                <li>
+                    <a href="http://localhost:8080/hinhthucthanhtoan">Hình Thức Thanh Toán</a>
+                </li>
+                <li>
+                   <a href="http://localhost:8080/sanpham">Sản Phẩm</a>
+                </li>
+            </ul>
+            <div class="navbar-right">
+                <button class="btn btn-info navbar-btn">Login</button>
+            </div>
+        </div>
+    </div>
+</nav>
+</body>
+</html>
