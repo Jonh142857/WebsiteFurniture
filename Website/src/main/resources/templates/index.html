@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="layout :: head"></head>
+<head th:replace="layout :: head">
+
+</head>
 <body>
-	<nav th:replace="layout :: header"></nav>
+	<!-- Top menu -->
+	<nav class="navbar navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="collapse navbar-collapse" id="top-navbar-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a class="scroll-link" href="#top-content">Trang Chủ</a></li>
+					<li><a class="scroll-link" href="#sanpham">Sản Phẩm</a></li>
+					<li><a class="scroll-link" href="#taikhoan">Tài Khoản</a></li>
+					<li><a class="scroll-link" href="#about">Thông Tin</a></li>
+					<li><a class="scroll-link" href="#lienhe">Liên Hệ</a></li>
+					<li><a href="#">Giỏ Hàng</a></li>
+					
+					<li><a><button>Tìm kiếm</button></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- Page title -->
 	
-		<h3>Wellcome to my project</h3>
-		<h1><a href="http://localhost:8080/loaisanpham">Loại Sản Phẩm</a></h1>
-		<h1><a href="http://localhost:8080/nhasanxuat">Nhà Sản Xuất</a></h1>
-		<h1><a href="http://localhost:8080/khuyenmai">Khuyến Mãi</a></h1>
-		<h1><a href="http://localhost:8080/hinhthucthanhtoan">Hình Thức Thanh Toán</a></h1>
-		<h1><a href="http://localhost:8080/sanpham">Sản Phẩm</a></h1>
-		
-	<footer th:replace="layout :: footer"></footer>
 </body>
 </html>

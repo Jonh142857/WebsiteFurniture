@@ -23,6 +23,10 @@ public class MainController {
     public String master() {
         return "master";
     }
+    @GetMapping("/index")
+    public String index() {
+        return "index";
+    }
     @GetMapping("/test")
     public String test() {
         return "test";

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<title>Spring MyContact</title>
+<title>Spring WebsiteFurniture</title>
 
 <link href="../static/images/logo.png" th:href="@{/images/logo.png}"
     rel="shortcut icon" />
@@ -46,24 +46,24 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="http://localhost:8080/">Xem Trang web</a>
+            <a class="navbar-brand" th:href="@{/index}">Xem Trang web</a>
         </div>
         <div class="collapse navbar-collapse" id="menu">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="http://localhost:8080/loaisanpham">Loại Sản Phẩm</a>
+                    <a th:href="@{/loaisanpham}">Loại Sản Phẩm</a>
                 </li>
                 <li>
-                    <a href="http://localhost:8080/nhasanxuat">Nhà Sản Xuất</a>
+                    <a th:href="@{/nhasanxuat}">Nhà Sản Xuất</a>
                 </li>
                 <li>
-                    <a href="http://localhost:8080/khuyenmai">Khuyến Mãi</a>
+                    <a th:href="@{/khuyenmai}">Khuyến Mãi</a>
                 </li>
                 <li>
-                    <a href="http://localhost:8080/hinhthucthanhtoan">Hình Thức Thanh Toán</a>
+                    <a th:href="@{/hinhthucthanhtoan}">Hình Thức Thanh Toán</a>
                 </li>
                 <li>
-                   <a href="http://localhost:8080/sanpham">Sản Phẩm</a>
+                   <a th:href="@{/sanpham}">Sản Phẩm</a>
                 </li>
             </ul>
             <div class="navbar-right">
@@ -72,10 +72,8 @@
         </div>
     </div>
 </nav>
-
-    <h1>Main content</h1>
-
     <footer th:fragment="footer" class="container"> 
+    <br/><br/><br/><br/><br/>
         &copy; 2017 Nguyễn Văn Huy
     </footer>
 </body>
