@@ -12,20 +12,29 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.huy.domain.HinhThucThanhToan;
-import com.huy.service.HinhThucThanhToanService;
-
 @Controller
 public class MainController {
 	
 
-    @GetMapping("/")
+    @GetMapping("/master")
     public String master() {
         return "master";
     }
     @GetMapping("/index")
     public String index() {
         return "index";
+    }
+    @GetMapping("/taikhoan")
+    public String taikhoan() {
+        return "taikhoan";
+    }
+    @GetMapping("/lienhe")
+    public String lienhe() {
+        return "lienhe";
+    }
+    @GetMapping("/giohang")
+    public String giohang() {
+        return "giohang";
     }
     @GetMapping("/test")
     public String test() {
