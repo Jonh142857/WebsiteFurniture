@@ -20,11 +20,17 @@ public class SanPhamController {
 	
 	@Autowired
 	private SanPhamService sanphamService;
-
+	
     @GetMapping("/sanpham")
-    public String index(Model model) {
+    public String sanpham(Model model) {
         model.addAttribute("sanphams", sanphamService.findAll());
         return "sanpham_list";
+    }
+    
+    @GetMapping("/home")
+    public String home(Model model) {
+    	 model.addAttribute("sanphams", sanphamService.findAll());
+        return "home";
     }
     
     @GetMapping("/sanpham/create")
