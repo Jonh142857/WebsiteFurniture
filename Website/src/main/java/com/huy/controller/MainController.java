@@ -19,7 +19,7 @@ public class MainController {
 	
 	@GetMapping("/user") 
 	public String user() {
-		return "home";
+		return "user";
 	}
 	
 	@GetMapping("/403")

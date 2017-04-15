@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout2 :: head">
+</head>
+<body>
+	<!-- Top menu -->
+	<nav th:replace="layout2 :: header"></nav>
+	<br />
+	<br />
+	<br />
+	<br />
+	<h1>Đây là các sản phẩm đang bán</h1>
+	<div th:each="sanpham:${sanphams}">
+		<div>
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<img th:src="@{${sanpham.hinh}}" />
+					<div class="caption">
+						<h3 th:text="${sanpham.name}"></h3>
+						<p th:text="${sanpham.mota}"></p>
+						<p>
+							<a href="#" class="btn btn-primary" data-toggle="modal"
+								data-target="#huy">Xem Chi Tiết</a> <a
+								href="#" class="btn btn-default" role="button">Thêm Vào Giỏ
+								Hàng</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Modal -->
+		<div class="modal fade" id="huy" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h3 th:text="${sanpham.name}" ></h3>
+					</div>
+					<div class="modal-body">
+						<img th:src="@{${sanpham.qrcode}}" />
+						<h4 th:text="${sanpham.mota}"></h4>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Modal -->
+	<br />
+	<br />
+	<br />
+	<br />
+	<nav th:replace="layout2 :: footer"></nav>
+</body>
+</html>
