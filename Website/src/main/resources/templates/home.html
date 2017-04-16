@@ -14,7 +14,7 @@
 		<div>
 			<div class="col-sm-6 col-md-4">
 				<div class="thumbnail">
-					<img th:src="@{${sanpham.hinh}}" />
+					<img width="300px" th:src="@{${sanpham.hinh}}" />
 					<div class="caption">
 						<h3 th:text="${sanpham.name}"></h3>
 						<p th:text="${sanpham.mota}"></p>
@@ -38,7 +38,7 @@
 						<h3 th:text="${sanpham.name}"></h3>
 					</div>
 					<div class="modal-body">
-						<img th:src="@{${sanpham.qrcode}}" />
+						<img width="500px" th:src="@{${sanpham.qrcode}}" />
 						<h4 th:text="${sanpham.mota}"></h4>
 					</div>
 					<div class="modal-footer">
