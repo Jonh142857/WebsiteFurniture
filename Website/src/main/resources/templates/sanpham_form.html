@@ -10,7 +10,7 @@
 		    method="POST" novalidate="novalidate">
 		    <input type="hidden" th:field="*{id}" />
 		    <div class="form-group">
-		        <label>Name</label> 
+		        <label>Tên</label> 
 		        <input type="text" class="form-control"
 		            th:field="*{name}" th:errorclass="field-error" /> 
 		        <em th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></em>
@@ -33,13 +33,21 @@
 		    </div>
 		     <div class="form-group">
 		        <label>Loại sản phẩm</label> 
-		        <input type="text" class="form-control" th:field="*{lsp_id}" />
+		        <select class="form-control" th:field="*{lsp_id}">
+		    		<option th:value="1">Bàn</option>
+		    		<option th:value="2">Ghế</option>
+		    		<option th:value="3">Giường</option>
+		   		</select>
 		    </div>
 		     <div class="form-group">
 		        <label>Nhà sản xuất</label> 
-		        <input type="text" class="form-control" th:field="*{nsx_id}" />
+		        <select class="form-control" th:field="*{nsx_id}">
+		    		<option th:value="1">Nội Thất Tân Hồng Nhật</option>
+		    		<option th:value="2">Nội Thất Đoàn Gia Phát</option>
+		    		<option th:value="3">WoodPro</option>
+		   		</select>
 		    </div>
-		    <button type="submit" class="btn btn-primary">Save</button>
+		    <button type="submit" class="btn btn-primary">Lưu</button>
 		</form>
         </div>
     </div><!-- /.container -->

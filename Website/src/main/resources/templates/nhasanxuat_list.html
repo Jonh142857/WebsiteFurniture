@@ -11,20 +11,26 @@
 	    </div>
     	
     	<th:block th:if="${#lists.isEmpty(nhasanxuats)}">
-		    <h3>No nhasanxuats</h3>
+		    <h3>Không có nhà sản xuất nào</h3>
+		    <div class="row">
+				<a th:href="@{/nhasanxuat/create}"
+					class="btn btn-success pull-center"> <span
+					class="glyphicon glyphicon-plus"></span> Thêm nhà sản xuất
+				</a>
+			</div>
 		</th:block>
 		
         <th:block th:unless="${#lists.isEmpty(nhasanxuats)}">
             <div class="row">
                 <a th:href="@{/nhasanxuat/create}" class="btn btn-success pull-left">
-                	<span class="glyphicon glyphicon-plus"></span> Add new nhasanxuat
+                	<span class="glyphicon glyphicon-plus"></span> Thêm nhà sản xuất
                	</a>
                 <form class="form-inline pull-right" action="#" th:action="@{/nhasanxuat/search}" method="GET">
                     <div class="form-group">
                         <input type="text" class="form-control" name="q" 
-                            placeholder="Type nhasanxuat name..." />
+                            placeholder="Nhập tên nhà sản xuất" />
                     </div>
-                    <button type="submit" class="btn btn-primary">Search</button>
+                    <button type="submit" class="btn btn-primary">Tìm kiếm</button>
                 </form>
             </div>
             <br/>
@@ -32,13 +38,13 @@
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>Name</th>
+                            <th>STT</th>
+                            <th>Tên</th>
                             <th>Địa Chỉ</th>
-                             <th>Email</th>
-                              <th>SĐT</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th>Email</th>
+                            <th>SĐT</th>
+                            <th>Sửa</th>
+                            <th>Xóa</th>
                         </tr>
                     </thead>
                     <tbody>

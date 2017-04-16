@@ -15,21 +15,27 @@
 		</div>
 
 		<th:block th:if="${#lists.isEmpty(sanphams)}">
-			<h3>No sanphams</h3>
+			<h3>Không có sản phẩm nào</h3>
+			<div class="row">
+				<a th:href="@{/sanpham/create}"
+					class="btn btn-success pull-center"> <span
+					class="glyphicon glyphicon-plus"></span> Thêm sản phẩm
+				</a>
+			</div>
 		</th:block>
 
 		<th:block th:unless="${#lists.isEmpty(sanphams)}">
 			<div class="row">
 				<a th:href="@{/sanpham/create}" class="btn btn-success pull-left">
-					<span class="glyphicon glyphicon-plus"></span> Add new sanpham
+					<span class="glyphicon glyphicon-plus"></span> Thêm sản phẩm
 				</a>
 				<form class="form-inline pull-right" action="#"
 					th:action="@{/sanpham/search}" method="GET">
 					<div class="form-group">
 						<input type="text" class="form-control" name="q"
-							placeholder="Type sanpham name..." />
+							placeholder="Nhập tên sản phẩm" />
 					</div>
-					<button type="submit" class="btn btn-primary">Search</button>
+					<button type="submit" class="btn btn-primary">Tìm kiếm</button>
 				</form>
 			</div>
 			<br/>
@@ -37,29 +43,34 @@
 				<table class="table table-bordered table-hover">
 					<thead>
 						<tr>
-							<th>No</th>
-							<th>Name</th>
+							<th>STT</th>
+							<th>Tên</th>
 							<th>Giá</th>
 							<th>Hình</th>
 							<th>QRCode</th>
 							<th>Mô tả</th>
 							<th>Loại sản phẩm</th>
 							<th>Nhà sản xuất</th>
-
-							<th>Edit</th>
-							<th>Delete</th>
+							<th>Sửa</th>
+							<th>Xóa</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="sanpham,iterStat : ${sanphams}">
+						<tr th:each="sanpham,iterStat : ${sanphams}" th:switch="${sanpham.lsp_id}">
 							<td th:text="${iterStat.count}"></td>
 							<td th:text="${sanpham.name}"></td>
 							<td th:text="${sanpham.gia}"></td>
 							<td th:text="${sanpham.hinh}"></td>
 							<td th:text="${sanpham.qrcode}"></td>
 							<td th:text="${sanpham.mota}"></td>
-							<td th:text="${sanpham.lsp_id}"></td>
-							<td th:text="${sanpham.nsx_id}"></td>
+							<td th:case="1">Bàn</td>
+							<td th:case="2">Ghế</td>
+							<td th:case="3">Giường</td>
+							<div th:switch="${sanpham.nsx_id}">
+							<td th:case="1">Nội Thất Tân Hồng Nhật</td>
+							<td th:case="2">Nội Thất Đoàn Gia Phát</td>
+							<td th:case="3">WoodPro</td>
+							</div>
 							<td><a th:href="@{/sanpham/{id}/edit(id=${sanpham.id})}"><span
 									class="glyphicon glyphicon-pencil"></span></a></td>
 							<td><a th:href="@{/sanpham/{id}/delete(id=${sanpham.id})}"><span
