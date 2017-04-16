@@ -10,7 +10,7 @@
 	<br />
 	<br />
 	<h1>Đây là các sản phẩm đang bán</h1>
-	<div th:each="sanpham:${sanphams}">
+	<div th:each="sanpham,iterStat:${sanphams}">
 		<div>
 			<div class="col-sm-6 col-md-4">
 				<div class="thumbnail">
@@ -19,23 +19,23 @@
 						<h3 th:text="${sanpham.name}"></h3>
 						<p th:text="${sanpham.mota}"></p>
 						<p>
-							<a href="#" class="btn btn-primary" data-toggle="modal"
-								data-target="#huy">Xem Chi Tiết</a> <a
-								href="#" class="btn btn-default" role="button">Thêm Vào Giỏ
-								Hàng</a>
+							<a class="btn btn-primary" data-toggle="modal"
+								th:attr="data-target='#'+${sanpham.id}">Augmented Reality</a> <!--id Model tương ứng với id sản phẩm -->
+								<a href="#"
+								class="btn btn-default" role="button">Thêm Vào Giỏ Hàng</a>
 						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- Modal -->
-		<div class="modal fade" id="huy" role="dialog">
+		<div class="modal fade" th:id="${sanpham.id}"><!--id Model tương ứng với id sản phẩm -->
 			<div class="modal-dialog">
 				<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h3 th:text="${sanpham.name}" ></h3>
+						<h3 th:text="${sanpham.name}"></h3>
 					</div>
 					<div class="modal-body">
 						<img th:src="@{${sanpham.qrcode}}" />
@@ -47,8 +47,9 @@
 				</div>
 			</div>
 		</div>
+		<!-- /Modal -->
 	</div>
-	<!-- /Modal -->
+	
 	<br />
 	<br />
 	<br />
